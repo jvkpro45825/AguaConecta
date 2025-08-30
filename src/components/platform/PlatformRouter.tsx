@@ -31,12 +31,11 @@ const PlatformRouter: React.FC<PlatformRouterProps> = ({ userRole = 'client' }) 
   const [showNewProjectModal, setShowNewProjectModal] = useState(false);
   const [showNewThreadModal, setShowNewThreadModal] = useState(false);
 
-  // Set language based on user role
+  // Set language based on user role immediately
   useEffect(() => {
-    if (userRole === 'client' && language === 'en') {
-      setLanguage('es'); // Client defaults to Spanish
-    } else if (userRole === 'developer' && language === 'es') {
-      setLanguage('en'); // Developer defaults to English
+    const targetLanguage = userRole === 'client' ? 'es' : 'en';
+    if (language !== targetLanguage) {
+      setLanguage(targetLanguage);
     }
   }, [userRole, language, setLanguage]);
 
