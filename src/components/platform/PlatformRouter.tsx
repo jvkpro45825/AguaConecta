@@ -40,10 +40,11 @@ const PlatformRouter: React.FC<PlatformRouterProps> = ({ userRole = 'client' }) 
     }
   }, [userRole, language, setLanguage]);
 
-  // Get total unread count for badge notifications
-  const totalUnreadCount = useQuery(api.threads.getTotalUnreadCount, {
-    viewer: userRole
-  });
+  // Get total unread count for badge notifications (temporarily disabled)
+  // const totalUnreadCount = useQuery(api.threads.getTotalUnreadCount, {
+  //   viewer: userRole
+  // });
+  const totalUnreadCount = 0;
 
   // Get main client directly
   const clients = useQuery(api.clients.getAllClients);
