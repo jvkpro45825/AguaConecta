@@ -56,19 +56,21 @@ const ProjectView: React.FC<ProjectViewProps> = ({
   const [activeTab, setActiveTab] = useState<'conversations' | 'files' | 'archive'>(initialTab);
   const [showThreadDropdown, setShowThreadDropdown] = useState<string | null>(null);
 
-  const project = useQuery(api.projects.getProject, { 
-    project_id: projectId as any 
-  });
+  const project = useQuery(api.projects.getProject, 
+    projectId ? { project_id: projectId as any } : "skip"
+  );
   
   const deleteProject = useMutation(api.projects.deleteProject);
   const toggleProjectArchive = useMutation(api.projects.toggleProjectArchive);
   const deleteThread = useMutation(api.threads.deleteThread);
   const toggleThreadArchive = useMutation(api.threads.toggleThreadArchive);
 
-  const allThreads = useQuery(api.threads.getProjectThreads, {
-    project_id: projectId as any,
-    viewer: "client"
-  }) || [];
+  const allThreads = useQuery(api.threads.getProjectThreads, 
+    projectId ? {
+      project_id: projectId as any,
+      viewer: "client"
+    } : "skip"
+  ) || [];
 
   // Filter threads based on active tab
   const threads = activeTab === 'archive' 

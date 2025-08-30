@@ -74,9 +74,9 @@ const NewThreadModal: React.FC<NewThreadModalProps> = ({
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const project = useQuery(api.projects.getProject, { 
-    project_id: projectId as any 
-  });
+  const project = useQuery(api.projects.getProject, 
+    projectId ? { project_id: projectId as any } : "skip"
+  );
   
   const createThread = useMutation(api.threads.createThread);
   
