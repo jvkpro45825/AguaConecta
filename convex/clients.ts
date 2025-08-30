@@ -230,3 +230,6 @@ export const archiveClient = mutation({
     return args.client_id;
   },
 });
+
+// Alias for compatibility with frontend
+export const list = getAllClients;
