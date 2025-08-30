@@ -46,7 +46,7 @@ const PlatformRouter: React.FC<PlatformRouterProps> = ({ userRole = 'client' }) 
   });
 
   // Get main client directly
-  const clients = useQuery(api.clients.list);
+  const clients = useQuery(api.clients.getAllClients);
   const [mainClientId, setMainClientId] = useState<string | null>(null);
 
   useEffect(() => {
