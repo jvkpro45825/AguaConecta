@@ -1,0 +1,72 @@
+{
+  "name": "AguaConecta - Communication Platform",
+  "short_name": "AguaConecta",
+  "description": "Professional client-developer communication platform with real-time messaging and project management",
+  "start_url": "/#/client?source=pwa",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#0EA5E9",
+  "background_color": "#ffffff",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "48x48 32x32 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "communication", "productivity"],
+  "lang": "en",
+  "dir": "ltr",
+  "prefer_related_applications": false,
+  "shortcuts": [
+    {
+      "name": "Client Messages",
+      "short_name": "Messages",
+      "description": "View client conversations and messages",
+      "url": "/#/client",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Developer Portal",
+      "short_name": "Developer",
+      "description": "Access developer communication portal",
+      "url": "/#/developer",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "New Project",
+      "short_name": "New Project",
+      "description": "Create a new project conversation",
+      "url": "/#/client?action=new-project",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "form_factor": "wide",
+      "label": "AguaConecta Communication Platform"
+    }
+  ]
+}
